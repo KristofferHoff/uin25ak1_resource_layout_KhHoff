@@ -1,0 +1,44 @@
+body {
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    background-color: #E1E5EE;
+    color: #2A324B;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2A324B;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+button {
+    background-color: #58699D;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2A324B;
+}
+
+main {
+    padding: 2rem;
+}
+
+a {
+    color: #58699D;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
