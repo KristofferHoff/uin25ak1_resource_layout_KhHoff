@@ -94,30 +94,35 @@ const resources = [
         ]
     },
 ]
-// Finn knappene og legg til event listeners
-const buttons = document.querySelectorAll('#category-menu button');
-const resourceContainer = document.getElementById('ressurser');
 
-// Funksjon for å oppdatere visningen basert på valgt kategori
-function filterResources(category) {
-    const filteredResources = resources.filter(resource => resource.category === category);
-    
-    // Generer HTML for de filtrerte ressursene
-    const filteredHTML = filteredResources.map(resource => {
-        return `
-            <article class="resource-card">
-                <h2>${resource.category}</h2>
-                <p>${resource.text}</p>
-                <ul>
-                    ${resource.sources.map(source => `<li><a href="${source.url}" target="_blank">${source.title}</a></li>`).join('')}
-                </ul>
-            </article>
-        `;
-    }).join('');
+document.querySelectorAll("#category-meny button").forEach((button) => {
+    button.addEventListener("click", () => {
+        const valgtKategori = button.getAttribute("data-category");
 
-    // Oppdater innholdet på nettsiden
-    resourceContainer.innerHTML = filteredHTML;
-}
+let resourcesHTML = ""
 
-// Vis alle ressurser ved start (valg av standard kategori)
-filterResources('HTML');
+let resultat = resources.filter((res)=> res.category === valgtKategori);
+
+//Løper gjennom products-arrayen:
+resultat.map(resource => {
+    resourcesHTML += 
+            ` <article class="resource-card">
+            <h3>${resource.category}</h3>
+            <p>${resource.text}</p>
+            <ul>
+                ${resource.sources
+                    .map((source) => {
+                        return `
+                            <li>
+                                <a href="${source.url}" target="_blank">${source.title}</a>
+                            </li>`;
+                    })
+                    .join("")}
+            </ul>
+        </article>`;})
+
+//Finn #productlist, og fyll den med verdiene i variabelen productHTML:
+document.getElementById("resource-list").innerHTML = resourcesHTML});
+console.log
+    });
+    document.querySelector('[data-category="HTML"]').click();
