@@ -94,28 +94,30 @@ const resources = [
         ]
     },
 ]
-console.log(resources)
+// Finn knappene og legg til event listeners
+const buttons = document.querySelectorAll('#category-menu button');
+const resourceContainer = document.getElementById('ressurser');
 
-//Gå gjennom alle producter, generere HTML for hvert produkt, skrive dette til index.html
+// Funksjon for å oppdatere visningen basert på valgt kategori
+function filterResources(category) {
+    const filteredResources = resources.filter(resource => resource.category === category);
+    
+    // Generer HTML for de filtrerte ressursene
+    const filteredHTML = filteredResources.map(resource => {
+        return `
+            <article class="resource-card">
+                <h2>${resource.category}</h2>
+                <p>${resource.text}</p>
+                <ul>
+                    ${resource.sources.map(source => `<li><a href="${source.url}" target="_blank">${source.title}</a></li>`).join('')}
+                </ul>
+            </article>
+        `;
+    }).join('');
 
-//En variabel som kan holde på HTML-en for produktene:
-let resourceHTML = ""
+    // Oppdater innholdet på nettsiden
+    resourceContainer.innerHTML = filteredHTML;
+}
 
-//Løper gjennom products-arrayen:
-resources.map(resource  => {
-    resourceHTML += 
-            `
-        <article class="resource-card">
-            <h2>${resource.category}</h2>
-            <p>${resource.text}</p>
-            <ul>
-                ${resource.sources
-                    .map(source => `<li><a href="${source.url}" target="_blank">${source.title}</a></li>`)
-                    .join("")}
-            </ul>
-        </article>
-    `;
-});
-
-//Finn #productlist, og fyll den med verdiene i variabelen productHTML:
-document.getElementById("ressurser").innerHTML = resourceHTML
+// Vis alle ressurser ved start (valg av standard kategori)
+filterResources('HTML');
