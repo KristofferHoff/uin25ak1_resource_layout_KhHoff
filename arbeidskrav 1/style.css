@@ -1,44 +1,83 @@
-body {
-    font-family: 'Montserrat', 'Roboto', sans-serif;
-    background-color: #E1E5EE;
-    color: #2A324B;
-    margin: 0;
-    padding: 0;
-}
 
-header {
-    background-color: #2A324B;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-}
+        :root {
+            --White: #FFF;
+            --Blue: #58699D;
+            --DarkBlue: #262b39;
+            --Background: #e5e9f0;
+        }
 
-nav {
-    margin-top: 1rem;
-}
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--Background);
+            font-family: Arial, sans-serif;
+        }
 
-button {
-    background-color: #58699D;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
-    cursor: pointer;
-}
+        header {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+        }
 
-button:hover {
-    background-color: #2A324B;
-}
+        header button {
+            flex: 1;
+            background-color: var(--DarkBlue);
+            color: var(--White);
+            padding: 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
 
-main {
-    padding: 2rem;
-}
+        header button:hover {
+            background-color: var(--Blue);
+        }
 
-a {
-    color: #58699D;
-    text-decoration: none;
-}
+        main {
+            background-color: var(--White);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            box-sizing: border-box;
+            text-align: left;
+        }
 
-a:hover {
-    text-decoration: underline;
-}
+        main h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--DarkBlue);
+        }
+
+        main p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: var(--Blue);
+        }
+
+        main ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        main ul li {
+            margin-bottom: 10px;
+        }
+
+        main ul li a {
+            color: var(--Blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main ul li a:hover {
+            text-decoration: underline;
+        }

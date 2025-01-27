@@ -99,23 +99,23 @@ console.log(resources)
 //Gå gjennom alle producter, generere HTML for hvert produkt, skrive dette til index.html
 
 //En variabel som kan holde på HTML-en for produktene:
-let resourcesHTML = ""
+let resourceHTML = ""
 
 //Løper gjennom products-arrayen:
-resources.map((resource) =>{
-     resourcesHTML += 
-            `<section class="resource-container">
-               <h3>${resource.category}</h3>
-                <p>${resource.text}</p>
-                <ul>
-                         <li>${resource.sources}</li>
-                </ul>
-            </section>`});
-
-           
-            
-            // Finn #resource-list og fyll inn generert HTML
-            const resourceList = document.getElementById("resource-list");
+resources.map(resource  => {
+    resourceHTML += 
+            `
+        <article class="resource-card">
+            <h2>${resource.category}</h2>
+            <p>${resource.text}</p>
+            <ul>
+                ${resource.sources
+                    .map(source => `<li><a href="${source.url}" target="_blank">${source.title}</a></li>`)
+                    .join("")}
+            </ul>
+        </article>
+    `;
+});
 
 //Finn #productlist, og fyll den med verdiene i variabelen productHTML:
-document.getElementById("resource-list").innerHTML = resourcesHTML;
+document.getElementById("ressurser").innerHTML = resourceHTML
