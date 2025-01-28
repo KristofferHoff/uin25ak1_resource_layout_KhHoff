@@ -21,7 +21,6 @@ header {
     width: 1200px;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px; 
 }
 
 #category-meny {
@@ -29,7 +28,6 @@ header {
     gap: 15px;
     background-color: var(--White);
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #category-meny button {
@@ -40,8 +38,14 @@ header {
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
-    border-radius: 5px;
-    width: 220px;
+    width: 225px;
+   
+}
+#category-meny button:hover {
+    background-color: var(--White); 
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+   color: #2A324B;
 }
 
 

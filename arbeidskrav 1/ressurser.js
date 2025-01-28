@@ -123,6 +123,5 @@ resultat.map(resource => {
 
 //Finn #productlist, og fyll den med verdiene i variabelen productHTML:
 document.getElementById("resource-list").innerHTML = resourcesHTML});
-console.log
     });
     document.querySelector('[data-category="HTML"]').click();
