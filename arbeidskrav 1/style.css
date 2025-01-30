@@ -44,7 +44,6 @@ header {
 #category-meny button:hover {
     background-color: var(--White); 
     transform: scale(1.05); 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
    color: #2A324B;
 }
 
